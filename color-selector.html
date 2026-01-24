@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="color">White</h1>
+    <button id="change">Change</button>
+</body>
+<script>
+    const colorText = document.querySelector('#color');
+    const changeBtn = document.querySelector('#change')
+
+    const colors = ["white", "red", "blue", "green", "yellow", "purple", "orange"];
+
+    changeBtn.addEventListener('click', 
+        () => {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const selectedColor = colors[randomIndex];
+
+            document.body.style.backgroundColor = selectedColor
+            colorText.innerText = selectedColor
+        }
+    )
+</script>
+</html>
