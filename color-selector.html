@@ -8,10 +8,14 @@
 <body>
     <h1 id="color">White</h1>
     <button id="change">Change</button>
+    <button id="back">← Back</button>
 </body>
 <script>
     const colorText = document.querySelector('#color');
     const changeBtn = document.querySelector('#change')
+    const backBtn = document.querySelector("#back");
+    console.log(backBtn);
+    const colorHistory = [];
 
     const colors = [
   "#FFFFFF", // white
@@ -80,7 +84,23 @@
   document.body.style.backgroundColor = selectedColor;
   colorText.innerText = selectedColor;
 
+    if (lastColor !== null) {
+        colorHistory.push(lastColor);
+    }
+    
   lastColor = selectedColor;
+});
+
+
+
+
+backBtn.addEventListener("click", function () {
+  if (colorHistory.length === 0) return;
+
+  const previousColor = colorHistory.pop();
+
+  document.body.style.backgroundColor = previousColor;
+  colorText.innerText = previousColor;
 });
 </script>
 </html>
