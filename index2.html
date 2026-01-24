@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Version 1</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 16px;
+      }
+
+      button {
+        padding: 10px 18px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #count {
+        font-size: 32px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="count">0</div>
+    <button id="btn">Increase</button>
+    <button id="btn2">Decrease</button>
+
+    <script>
+      let count = 0;
+
+      const countEl = document.getElementById("count");
+      const btn = document.getElementById("btn");
+      const btn2 = document.getElementById("btn2")
+
+      btn.addEventListener("click", () => {
+        count = count + 1;
+        countEl.textContent = count;
+      });
+
+     btn2.addEventListener("click", () => {
+        count = count - 1;
+        countEl.textContent = count;
+     })
+    </script>
+  </body>
+</html>

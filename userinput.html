@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="noteInput" placeholder="type something...">
+    <button id="saveNote">Save Text</button>
+
+    <p>Your saved text:</p>
+    <p id="savedNote">Nothing saved yet</p>
+</body>
+<script>
+    let savedText = localStorage.getItem("note");
+
+    const noteInput = document.getElementById("noteInput");
+    const saveBtn = document.getElementById("saveNote");
+    const savedNoteEl = document.getElementById("savedNote");
+
+    if (savedText) {
+        savedNoteEl.textContent = savedText
+    }
+
+    saveBtn.addEventListener("click", () => {
+        const text = noteInput.value;
+
+        if (text === '') return;
+
+        localStorage.setItem("note", text);
+        savedNoteEl.textContent = text;
+        noteInput.value = "";
+    });
+</script>
+</html>

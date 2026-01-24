@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body {
+        display: flex;
+        font-family: system-ui, sans-serif;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 16px;
+      }
+      button{
+         padding: 10px 20px;
+      }
+</style>
+<body>
+    <div id="count">10</div>
+    <button id="btn">increase text</button>
+    <button id="btn2">decrease test</button>
+    <button id="reset">reset btn</button>
+</body>
+<script>
+    let count = 10
+
+    const countmd = document.getElementById("count")
+    const btn = document.getElementById("btn")
+    const btn2 = document.getElementById("btn2")
+    const reset = document.getElementById("reset")
+
+
+    btn.addEventListener("click", () => {
+        count = count + 2;
+        countmd.textContent = count;
+    } )
+
+    btn2.addEventListener("click", () => {
+        count = count - 2;
+        countmd.textContent = count;
+    })
+
+   reset.addEventListener("click", () => {
+    count = 2
+    countmd.textContent = count;
+   })
+
+</script>
+</html>

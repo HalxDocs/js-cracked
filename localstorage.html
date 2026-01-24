@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="count">0</div>
+    <button id="btn">increment</button>
+    <button id="btn2">decrement</button>
+    <button id="reset">reset</button>
+</body>
+<script>
+    let count = localStorage.getItem("count");
+    count = count ? Number(count) : 0;
+     
+    const countmm = document.getElementById("count");
+    const btn = document.getElementById("btn");
+    const btn2 = document.getElementById("btn2");
+    const reset = document.getElementById("reset");
+
+    countmm.textContent = count;
+
+    btn.addEventListener('click', () => {
+        count++
+        countmm.textContent = count;
+
+        localStorage.setItem("count", count);
+    })
+
+    
+    btn2.addEventListener('click', () => {
+        count--
+        countmm.textContent = count;
+
+        localStorage.setItem("count", count);
+    })
+    
+    
+    reset.addEventListener('click', () => {
+        count = 0
+        countmm.textContent = count
+
+        localStorage.setItem("count", count);
+    })
+</script>
+</html>

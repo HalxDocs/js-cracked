@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="count">0</h1>
+    <button id="increase">increase</button>
+    <button id="decrease">decrease</button>
+    <button id="reset">reset</button>
+</body>
+
+<script>
+    const countEl = document.querySelector("#count");
+    const increaseBtn = document.querySelector("#increase");
+    const decreaseBtn = document.querySelector("#decrease");
+    const resetBtn = document.querySelector("#reset")
+
+    let count = 0
+
+    function increaseBut() {
+        count++
+        countEl.innerText = count
+    }
+    increaseBtn.addEventListener("click" , increaseBut)
+
+function decreasebut() {
+    count--
+    countEl.innerText = count
+}
+
+decreaseBtn.addEventListener("click", decreasebut)
+resetBtn.addEventListener("click" ,
+
+    function () {
+        count = 0 
+        countEl.innerText = count
+    })
+
+</script>
+</html>
