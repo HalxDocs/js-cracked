@@ -13,16 +13,74 @@
     const colorText = document.querySelector('#color');
     const changeBtn = document.querySelector('#change')
 
-    const colors = ["white", "red", "blue", "green", "yellow", "purple", "orange"];
+    const colors = [
+  "#FFFFFF", // white
+  "#000000", // black
+  "#FF0000", // red
+  "#00FF00", // green
+  "#0000FF", // blue
+  "#FFFF00", // yellow
+  "#FF00FF", // magenta
+  "#00FFFF", // cyan
 
-    changeBtn.addEventListener('click', 
-        () => {
-            const randomIndex = Math.floor(Math.random() * colors.length);
-            const selectedColor = colors[randomIndex];
+  "#F44336",
+  "#E91E63",
+  "#9C27B0",
+  "#673AB7",
+  "#3F51B5",
+  "#2196F3",
+  "#03A9F4",
+  "#00BCD4",
 
-            document.body.style.backgroundColor = selectedColor
-            colorText.innerText = selectedColor
-        }
-    )
+  "#009688",
+  "#4CAF50",
+  "#8BC34A",
+  "#CDDC39",
+  "#FFC107",
+  "#FF9800",
+  "#FF5722",
+  "#795548",
+
+  "#9E9E9E",
+  "#607D8B",
+  "#1ABC9C",
+  "#16A085",
+  "#2ECC71",
+  "#27AE60",
+  "#3498DB",
+  "#2980B9",
+
+  "#9B59B6",
+  "#8E44AD",
+  "#34495E",
+  "#2C3E50",
+  "#F1C40F",
+  "#E67E22",
+  "#E74C3C",
+  "#C0392B",
+
+  "#BDC3C7",
+  "#95A5A6",
+  "#7F8C8D",
+  "#D35400",
+  "#A93226",
+  "#1C2833"
+];
+    let lastColor = null;
+
+   changeBtn.addEventListener("click", function () {
+  let randomIndex;
+  let selectedColor;
+
+  do {
+    randomIndex = Math.floor(Math.random() * colors.length);
+    selectedColor = colors[randomIndex];
+  } while (selectedColor === lastColor);
+
+  document.body.style.backgroundColor = selectedColor;
+  colorText.innerText = selectedColor;
+
+  lastColor = selectedColor;
+});
 </script>
 </html>
